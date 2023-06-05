@@ -13,6 +13,14 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private NetworkPrefabRef _playerPrefab;
     private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
 
+    private bool _mouseButton0;
+    private bool _mouseButton1;
+
+    private void Update()
+    {
+        _mouseButton0 = _mouseButton0 | Input.GetMouseButton(0);
+        _mouseButton1 = _mouseButton1 || Input.GetMouseButton(1);
+    }
 
     private void OnGUI()
     {
@@ -111,7 +119,16 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
         {
             data.direction += Vector3.right;
         }
-
+        if (_mouseButton0)
+        {
+            data.buttons |= NetworkInputData.MOUSEBUTTON1;
+        }
+        if (_mouseButton1)
+        {
+            data.buttons |= NetworkInputData.MOUSEBUTTON2;
+        }
+        _mouseButton1 = false;
+        _mouseButton0 = false;
         input.Set(data);
     }
 

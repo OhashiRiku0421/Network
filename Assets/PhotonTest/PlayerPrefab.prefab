@@ -133,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3973941739529460112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0587647, y: -3.4386072, z: 0.098714076}
+  m_LocalPosition: {x: 2.0587647, y: -4.46, z: 0.098714076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -241,6 +241,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 2
+  _prefabBall: {fileID: 8229621130906609386, guid: d5bd7992a30ce494c889091211abff8e,
+    type: 3}
+  _prefabPhysxBall: {fileID: 5664508721695388128, guid: 36f9fd8f4a88b5d4fbff0ca01d1a24b7,
+    type: 3}
+  _spawned:
+    _value: 0
 --- !u!1 &8964588943448438301
 GameObject:
   m_ObjectHideFlags: 0
